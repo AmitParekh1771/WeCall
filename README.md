@@ -1,2 +1,2 @@
 # WeCall
-Flipr.ai hackathon video calling app
+Hackathon video calling app
