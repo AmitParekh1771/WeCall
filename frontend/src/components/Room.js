@@ -1,33 +1,33 @@
 import React from 'react'
 
-const RoomSelection = () => {
+const Room = () => {
   return (
     <>
-      <div class='section room-section'>
-        <div class='outer-container-1360'>
-          <div class='videos-container'>
-            <div class='video-block'>
+      <div className='section room-section'>
+        <div className='outer-container-1360'>
+          <div className='videos-container'>
+            <div className='video-block'>
               <div>Video user 1</div>
             </div>
-            <div class='video-block'>
+            <div className='video-block'>
               <div>Video user 2</div>
             </div>
           </div>
-          <div class='operate-container'>
-            <div class='feature-btn'>
-              <div class='fa-solid'></div>
+          <div className='operate-container'>
+            <div className='feature-btn'>
+              <div className='fa-solid'></div>
             </div>
-            <div class='feature-btn feature-active'>
-              <div class='fa-solid'></div>
+            <div className='feature-btn feature-active'>
+              <div className='fa-solid'></div>
             </div>
-            <div class='feature-btn'>
-              <div class='fa-solid'></div>
+            <div className='feature-btn'>
+              <div className='fa-solid'></div>
             </div>
-            <div class='feature-btn feature-active'>
-              <div class='fa-solid'></div>
+            <div className='feature-btn feature-active'>
+              <div className='fa-solid'></div>
             </div>
-            <div class='end-btn'>
-              <div class='fa-solid rotate'></div>
+            <div className='end-btn'>
+              <div className='fa-solid rotate'></div>
             </div>
           </div>
         </div>
@@ -36,4 +36,4 @@ const RoomSelection = () => {
   )
 }
 
-export default RoomSelection
+export default Room

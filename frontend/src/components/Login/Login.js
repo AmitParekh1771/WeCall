@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 import './login.css'
 
@@ -38,13 +39,13 @@ const Login = () => {
     <div className='App'>
       <div id='signInDiv'></div>
       {Object.keys(user).length !== 0 && (
-        <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
-      )}
+          <div>
+            <img src={user.picture} alt='dp' />
+            <h3>{user.name}</h3>
+          </div>
+        ) && <Navigate to='/join' />}
       {Object.keys(user).length !== 0 && (
-        <div>
-          <img src={user.picture} alt='dp' />
-          <h3>{user.name}</h3>
-        </div>
+        <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
       )}
     </div>
   )

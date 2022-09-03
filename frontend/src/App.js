@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Login from './components/Login/Login'
 import Navbar from './components/Navbar'
 import Join from './components/Join'
