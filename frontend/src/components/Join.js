@@ -1,12 +1,18 @@
 import React from 'react'
 
-const Join = (props) => {
+const Join = () => {
+  const name = localStorage.getItem('name')
+  const picture = localStorage.getItem('picture')
+  const email = localStorage.getItem('email')
+  console.log(name)
+  console.log(picture)
+  console.log(email)
   return (
     <>
       <div className='section meet-join-section'>
         <div className='outer-container-1360'>
           <div className='meet-join-container'>
-            <div className='large-title-text'>Hi &lt;username&gt;!</div>
+            <div className='large-title-text'>Hi {name}!</div>
             <div className='medium-title-text'>
               Connect anyone, anywhere, anytime. Simple &amp; easy to use video
               calling service absolutely free.
@@ -29,11 +35,11 @@ const Join = (props) => {
                   <input
                     type='text'
                     className='join-input w-input'
-                    maxlength='256'
+                    maxLength={256}
                     name='code'
                     data-name='code'
                     placeholder='code or link'
-                    autocomplete='off'
+                    autoComplete='off'
                     id='code-2'
                   />
                   <button

@@ -5,11 +5,15 @@ import './login.css'
 
 const Login = () => {
   const [user, setUser] = useState({})
+  const [items, setItems] = useState([])
 
   function handleCallbackResponse(response) {
     console.log('Encoded JWT ID token: ' + response.credential)
     var userObject = jwt_decode(response.credential)
     console.log(userObject)
+    localStorage.setItem('name', JSON.stringify(userObject.given_name))
+    localStorage.setItem('picture', JSON.stringify(userObject.picture))
+    localStorage.setItem('email', JSON.stringify(userObject.email))
     setUser(userObject)
     document.getElementById('signInDiv').hidden = true
   }
