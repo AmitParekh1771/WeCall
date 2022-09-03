@@ -1,68 +1,53 @@
-import React from 'react'
-import image from './images/7070629_3293465.jpg'
-import { Button } from '@material-ui/core'
-import { GoogleOAuthProvider } from '@react-oauth/google'
-import { GoogleLogin } from '@react-oauth/google'
-
+import React, { useEffect, useState } from 'react'
+import jwt_decode from 'jwt-decode'
 import './login.css'
 
-const login = () => {
-  const responseGoogle = (response) => {
-    console.log(response)
+const Login = () => {
+  const [user, setUser] = useState({})
+
+  function handleCallbackResponse(response) {
+    console.log('Encoded JWT ID token: ' + response.credential)
+    var userObject = jwt_decode(response.credential)
+    console.log(userObject)
+    setUser(userObject)
+    document.getElementById('signInDiv').hidden = true
   }
 
+  function handleSignOut(event) {
+    setUser({})
+    document.getElementById('signInDiv').hidden = false
+  }
+
+  useEffect(() => {
+    /* global google */
+    google.accounts.id.initialize({
+      client_id:
+        '926212863062-uiok496ejmb30rkbfgddko4v07umis3g.apps.googleusercontent.com',
+      callback: handleCallbackResponse,
+    })
+
+    google.accounts.id.renderButton(document.getElementById('signInDiv'), {
+      theme: 'outline',
+      size: 'large',
+    })
+
+    google.accounts.id.prompt()
+  }, [])
+
   return (
-    <GoogleOAuthProvider clientId='384079295225-0v7m15e4deg4n9cl5epa4pc06afhvrr0.apps.googleusercontent.com'>
-      <GoogleLogin
-        onSuccess={(credentialResponse) => {
-          console.log(credentialResponse)
-        }}
-        onError={() => {
-          console.log('Login Failed')
-        }}
-      />
-    </GoogleOAuthProvider>
-    // // <div className='login-section'>
-    // //   <div className='outer-container-1360 login-block'>
-    // //     <img
-    // //       src={image}
-    // //       loading='lazy'
-    // //       width='600'
-    // //       height='600'
-    // //       alt='login-illustration'
-    // //       className='login-image'
-    // //     />
-    // //     <div className='login-box'>
-    // //       <div className='large-title-text'>Hey There!</div>
-    // //       <div className='descriptive-text'>
-    // //         Can't remember username and password!
-    // //       </div>
-    // //       <div className='descriptive-text'>
-    // //         No need. Authenticate yourself in one tap.
-    // //       </div>
-    // //       <GoogleLogin
-    // //         clientId='384079295225-lrvhvhgfk9lnpjt2o8k9sctk1nv4v9h7.apps.googleusercontent.com'
-    // //         scope='email'
-    // //         render={(renderProps) => (
-    // //           <Button
-    // //             className='googleButton login-btn'
-    // //             color='primary'
-    // //             fullWidth
-    // //             onClick={renderProps.onClick}
-    // //             disabled={renderProps.disabled}
-    // //             variant='contained'
-    // //           >
-    // //             Sign-in with Google
-    // //           </Button>
-    // //         )}
-    // //         onSuccess={responseGoogle}
-    // //         onFailure={responseGoogle}
-    // //         cookiePolicy={'single_host_origin'}
-    // //       />
-    // //     </div>
-    // //   </div>
-    // </div>
+    <div className='App'>
+      <div id='signInDiv'></div>
+      {Object.keys(user).length !== 0 && (
+        <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
+      )}
+      {Object.keys(user).length !== 0 && (
+        <div>
+          <img src={user.picture} alt='dp' />
+          <h3>{user.name}</h3>
+        </div>
+      )}
+    </div>
   )
 }
 
-export default login
+export default Login
