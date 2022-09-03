@@ -1,6 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from 'react-router-dom';
+
 
 const Join = () => {
+
+  const navigate = useNavigate();
+
+  function handleJoinThruCode(event){
+      event.preventDefault();
+      const roomId = event.target.elements.code.value;
+      navigate(`/lobby/${roomId}`);
+  }
+
+  function handleNewMeetButton(){
+    const uniqueId = uuidv4();
+    console.log(uniqueId);
+    navigate(`/room/${uniqueId}`);
+  }
+
   let name = localStorage.getItem('name')
   const picture = localStorage.getItem('picture')
   const email = localStorage.getItem('email')
@@ -26,13 +44,14 @@ const Join = () => {
             <div className='user-action-container medium-title-text'>
               <div className='new-meet-btn large-btn'>
                 <div className='fa-solid'></div>
-                <div>Create meet</div>
+                <div onClick={handleNewMeetButton}>Create meet</div>
               </div>
               <div className='join-meet-container'>
                 <form
                   id='email-form'
                   name='email-form'
                   className='meet-join-form'
+                  onSubmit={handleJoinThruCode}
                 >
                   <input
                     type='text'

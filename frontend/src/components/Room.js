@@ -1,6 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 
 const Room = () => {
+
+  const navigate = useNavigate();
+
+  function handleEndCall(){
+    console.log("clicked");
+    navigate(`/join`)
+  }
+
   return (
     <>
       <div className='section room-section'>
@@ -27,7 +37,7 @@ const Room = () => {
               <div className='fa-solid'></div>
             </div>
             <div className='end-btn'>
-              <div className='fa-solid rotate'></div>
+              <div onClick = {handleEndCall} className='fa-solid rotate'></div>
             </div>
           </div>
         </div>
