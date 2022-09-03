@@ -1,9 +1,11 @@
 import React from 'react'
 
 const Join = () => {
-  const name = localStorage.getItem('name')
+  let name = localStorage.getItem('name')
   const picture = localStorage.getItem('picture')
   const email = localStorage.getItem('email')
+  var noQuotes = name.split('"').join('')
+  name = noQuotes
   console.log(name)
   console.log(picture)
   console.log(email)
