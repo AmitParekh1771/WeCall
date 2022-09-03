@@ -2,9 +2,9 @@ import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import Login from './components/Login/Login'
 import Navbar from './components/Navbar'
-import JoinMeet from './components/JoinMeet'
+import Join from './components/Join'
 import Lobby from './components/Lobby'
-import RoomSelection from './components/RoomSelection'
+import Room from './components/Room'
 
 import './base.css'
 import './wecall.css'
@@ -15,9 +15,9 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/join' element={<JoinMeet />} />
-        <Route path='/lobby' element={<Lobby />} />
-        <Route path='/roomselection/:rid' element={<RoomSelection />} />
+        <Route path='/join' element={<Join />} />
+        <Route path='/lobby/:rid' element={<Lobby />} />
+        <Route path='/room/:rid' element={<Room />} />
       </Routes>
     </div>
   )
