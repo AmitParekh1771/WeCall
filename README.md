@@ -7,7 +7,7 @@ This is a web application where users can video call one another.
 
 ## Deployment
 
-To deploy this project run
+To run this project
 
 ```bash
   npm i
