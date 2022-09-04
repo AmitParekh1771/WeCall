@@ -39,23 +39,23 @@ async function startStream(el) {
     }
 }
 
-/**
- * function to stop video stream
- * 
- * @param {HTMLVideoElement} el 
- */
-function stopStream(el) {
-    const stream = el.srcObject;
-    const tracks = stream.getTracks();
+// /**
+//  * function to stop video stream
+//  * 
+//  * @param {HTMLVideoElement} el 
+//  */
+// function stopStream(el) {
+//     const stream = el.srcObject;
+//     const tracks = stream.getTracks();
 
-    for (let i = 0; i < tracks.length; i++) {
-        const track = tracks[i];
-        track.stop();
-    }
+//     for (let i = 0; i < tracks.length; i++) {
+//         const track = tracks[i];
+//         track.stop();
+//     }
 
-    el.srcObject = null;
+//     el.srcObject = null;
 
-}
+// }
 
 
 let localVideo = document.getElementById('localVideo');
