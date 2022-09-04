@@ -73,10 +73,8 @@ const Room = () => {
             <div className='feature-btn feature-active'>
               <div className='fa-solid'></div>
             </div>
-            <div className='end-btn'>
-              <div onClick={handleEndCall} className='fa-solid rotate'>
-                
-              </div>
+            <div className='end-btn' onClick={handleEndCall}>
+              <div className='fa-solid rotate'></div>
             </div>
           </div>
         </div>
