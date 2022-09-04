@@ -16,6 +16,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/join' element={<Join />} />
+        {/* <Route path="/lobby/:rid" render={(props) => (<Lobby uniqueId={props.match.params.rid}/>)} /> */}
+        {/* <Route exact path="/details/:rid" render={(props)=>{return(<Lobby urid={props.match.params.id}/>)}} /> */}
         <Route path='/lobby/:rid' element={<Lobby />} />
         <Route path='/room/:rid' element={<Room />} />
       </Routes>

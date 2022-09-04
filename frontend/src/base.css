@@ -22,6 +22,10 @@ img {
   box-sizing: border-box;
 }
 
+video {
+  width: 100%;
+}
+
 .w-input,
 .w-select {
   display: block;

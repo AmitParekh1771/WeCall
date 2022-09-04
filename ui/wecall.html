@@ -126,11 +126,15 @@
     <div class="section room-section">
       <div class="outer-container-1360">
         <div class="videos-container">
-          <div class="video-block"><div>Video user 1</div></div>
+          <div class="video-block">
+            <div>
+              <video autoplay="true" id="videoElement" muted="muted"></video>
+            </div>
+          </div>
           <div class="video-block"><div>Video user 2</div></div>
         </div>
         <div class="operate-container">
-          <div class="feature-btn"><div class="fa-solid"></div></div>
+          <div class="feature-btn" onclick="toggleStream()"><div class="fa-solid"></div></div>
           <div class="feature-btn feature-active">
             <div class="fa-solid"></div>
           </div>
@@ -143,5 +147,7 @@
       </div>
     </div>
     <!-- room section -->
+
+    <script src="./wecall.js"></script>
   </body>
 </html>

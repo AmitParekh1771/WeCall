@@ -1,10 +1,14 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
+import { useNavigate } from 'react-router-dom'
 
 const Join = () => {
   let tempName = localStorage.getItem('name')
   const name = tempName.replace(/['"]+/g,'');
   const picture = localStorage.getItem('picture')
   const email = localStorage.getItem('email')
+  var noQuotes = name.split('"').join('')
+  name = noQuotes
   console.log(name)
   console.log(picture)
   console.log(email)
@@ -25,13 +29,14 @@ const Join = () => {
             <div className='user-action-container medium-title-text'>
               <div className='new-meet-btn large-btn'>
                 <div className='fa-solid'></div>
-                <div>Create meet</div>
+                <div onClick={handleNewMeetButton}>Create meet</div>
               </div>
               <div className='join-meet-container'>
                 <form
                   id='email-form'
                   name='email-form'
                   className='meet-join-form'
+                  onSubmit={handleJoinThruCode}
                 >
                   <input
                     type='text'
