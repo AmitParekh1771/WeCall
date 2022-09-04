@@ -42,10 +42,7 @@ const Join = () => {
               Create a new meeting / Join existing meeting with code or link.
             </div>
             <div className='user-action-container medium-title-text'>
-              <div
-                className='new-meet-btn large-btn'
-                onClick={handleNewMeetButton}
-              >
+              <div className='new-meet-btn large-btn' onClick={handleNewMeetButton}>
                 <div className='fa-solid'></div>
                 <div>Create meet</div>
               </div>

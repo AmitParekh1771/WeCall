@@ -36,7 +36,7 @@ const Login = () => {
       size: 'large',
     })
     console.log(google.accounts.id);
-    google.accounts.id.prompt()
+    // google.accounts.id.prompt()
   }, [])
 
   return (

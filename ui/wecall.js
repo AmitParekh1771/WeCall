@@ -14,12 +14,10 @@ let pc = new RTCPeerConnection(servers);
 
 let ws = new WebSocket('ws://localhost:4000');
 
-
-
 let localStream = new MediaStream();
 let remoteStream = new MediaStream();
 
-
+    
 /**
  * function to start video stream
  * 
@@ -73,8 +71,7 @@ function toggleStream(type) {
         if(track.kind == type)
             track.enabled = !track.enabled;
     })
-}
-        
+}      
 pc.addEventListener('track', (ev) => {
     remoteStream.addTrack(ev.track);
     remoteVideo.srcObject = remoteStream;
