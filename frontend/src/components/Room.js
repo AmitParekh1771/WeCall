@@ -1,4 +1,4 @@
-import { Button } from '@material-ui/core'
+import { Button, ButtonGroup } from '@material-ui/core'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
@@ -20,14 +20,27 @@ const Room = () => {
   emailmsg = emailmsg + { rid }.rid
   return (
     <>
-      <button>
-        <a href={msg}>Share Via WhatsApp</a>
-      </button>
-      <button>
-        <a href={emailmsg} target='_blank'>
-          Share via Email
-        </a>
-      </button>
+      <ButtonGroup
+        variant='text'
+        aria-label='text button group'
+        style={{ display: 'flex', justifyContent: 'center' }}
+      >
+        <Button>
+          <a href={msg} style={{ color: 'green', textDecoration: 'none' }}>
+            <i className='fa-brands fa-whatsapp'></i> Share Via WhatsApp
+          </a>
+        </Button>
+        <Button>
+          <a
+            href={emailmsg}
+            style={{ color: 'blue', textDecoration: 'none' }}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <i className='fa-solid fa-envelope'></i> Share Via Email
+          </a>
+        </Button>
+      </ButtonGroup>
       <div className='section room-section'>
         <div className='outer-container-1360'>
           <div className='videos-container'>

@@ -5,7 +5,6 @@ import './login.css'
 
 const Login = () => {
   const [user, setUser] = useState({})
-  const [items, setItems] = useState([])
 
   function handleCallbackResponse(response) {
     console.log('Encoded JWT ID token: ' + response.credential)
