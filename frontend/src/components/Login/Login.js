@@ -41,22 +41,22 @@ const Login = () => {
 
   return (
     <div className='App'>
-      <div class="login-section">
-      <div class="outer-container-1360 login-block">
+      <div className="login-section">
+      <div className="outer-container-1360 login-block">
         <img
           src={image}
           loading="lazy"
           width="600"
           height="600"
           alt="login-illustration"
-          class="login-image"
+          className="login-image"
         />
-        <div class="login-box">
-          <div class="large-title-text">Hey There!</div>
-          <div class="descriptive-text">
+        <div className="login-box">
+          <div className="large-title-text">Hey There!</div>
+          <div className="descriptive-text">
             Can't remember username and password!
           </div>
-          <div class="descriptive-text">
+          <div className="descriptive-text">
             No need. Authenticate yourself in one tap.
           </div>
             <div className='flexy'><div id='signInDiv' className='login-btn medium-title-text'></div></div>

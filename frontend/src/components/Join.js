@@ -3,26 +3,26 @@ import { v4 as uuidv4 } from 'uuid'
 import { useNavigate } from 'react-router-dom'
 
 const Join = () => {
-  
-  const navigate = useNavigate();
-
-  function handleJoinThruCode(event){
-      event.preventDefault();
-      const roomId = event.target.elements.code.value;
-      navigate(`/lobby/${roomId}`);
+  const navigate = useNavigate()
+  function handleJoinThruCode(event) {
+    event.preventDefault()
+    const roomId = event.target.elements.code.value
+    navigate(`/lobby/${roomId}`)
   }
 
-  function handleNewMeetButton(){
-    const uniqueId = uuidv4();
-    console.log(uniqueId);
-    navigate(`/room/${uniqueId}`);
+  function handleNewMeetButton() {
+    const uniqueId = uuidv4()
+    console.log(uniqueId)
+    navigate(`/room/${uniqueId}`)
   }
-
-  let tempName = localStorage.getItem('name')
-  const name = tempName.replace(/['"]+/g,'');
-  const picture = localStorage.getItem('picture')
-  const email = localStorage.getItem('email')
-  var noQuotes = name.split('"').join('')
+  let name,picture,email
+  if(localStorage.getItem('name') != null)
+  {
+    name = localStorage.getItem('name')
+    picture = localStorage.getItem('picture')
+    email = localStorage.getItem('email')
+    var noQuotes = name.split('"').join('')
+  }
   name = noQuotes
   console.log(name)
   console.log(picture)
