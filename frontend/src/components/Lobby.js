@@ -1,17 +1,14 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom'
 
 const Lobby = (props) => {
+  const navigate = useNavigate()
 
-  const navigate = useNavigate();
+  let { rid } = useParams()
 
-  let {rid}=useParams()
-  
-  function lobbyToRoom(){
-    
-    navigate(`/room/${{rid}.rid}`);
+  function lobbyToRoom() {
+    navigate(`/room/${{ rid }.rid}`)
   }
 
   return (
@@ -23,8 +20,8 @@ const Lobby = (props) => {
           </div>
           <div className='join-confirm-container medium-title-text'>
             <div className='join-confirm-msg'>Ready to join meet?</div>
-            <div className='join-btn large-btn'>
-              <div onClick={lobbyToRoom}>Join</div>
+            <div className='join-btn large-btn' onClick={lobbyToRoom}>
+              <div>Join</div>
             </div>
           </div>
         </div>
