@@ -3,6 +3,21 @@ import { v4 as uuidv4 } from 'uuid'
 import { useNavigate } from 'react-router-dom'
 
 const Join = () => {
+  
+  const navigate = useNavigate();
+
+  function handleJoinThruCode(event){
+      event.preventDefault();
+      const roomId = event.target.elements.code.value;
+      navigate(`/lobby/${roomId}`);
+  }
+
+  function handleNewMeetButton(){
+    const uniqueId = uuidv4();
+    console.log(uniqueId);
+    navigate(`/room/${uniqueId}`);
+  }
+
   let tempName = localStorage.getItem('name')
   const name = tempName.replace(/['"]+/g,'');
   const picture = localStorage.getItem('picture')
