@@ -3,6 +3,10 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
+function handleStreamClick() {
+  console.log('clicked')
+}
+
 const Room = () => {
   const navigate = useNavigate()
 
@@ -48,11 +52,16 @@ const Room = () => {
               <div>Video user 1</div>
             </div>
             <div className='video-block'>
+              <div>
+                <video autoPlay={true} id='videoElement' muted='muted'></video>
+              </div>
+            </div>
+            <div className='video-block'>
               <div>Video user 2</div>
             </div>
           </div>
           <div className='operate-container'>
-            <div className='feature-btn'>
+            <div className='feature-btn' onClick={handleStreamClick}>
               <div className='fa-solid'></div>
             </div>
             <div className='feature-btn feature-active'>
