@@ -73,7 +73,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 80px;
+  min-height: 10vh;
   background-color: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -88,12 +88,21 @@
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  align-items: center;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
+
+.profilePic{
+  margin-left: 10px;
+  border-radius: 50%;
+  width: 13%;
+}
+
+
 
 /* navigation-section */
 
@@ -104,8 +113,8 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
-  padding: 50px 5%;
+  min-height: 90vh;
+  /* padding: 50px 5%; */
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -154,11 +163,12 @@
   display: -ms-flexbox;
   display: flex;
   margin-top: 20px;
-  padding: 15px 20px;
+  padding: 8px 20px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  align-items: center;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   border-radius: 5px;
@@ -167,10 +177,16 @@
   transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   color: #fff;
   cursor: pointer;
+  width:220px;
 }
 
 .login-btn:hover {
   background-color: #376fcc;
+}
+
+.flexy{
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 991px) {
@@ -225,7 +241,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .meet-join-container {

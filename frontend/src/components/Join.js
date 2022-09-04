@@ -1,7 +1,8 @@
 import React from 'react'
 
 const Join = () => {
-  const name = localStorage.getItem('name')
+  let tempName = localStorage.getItem('name')
+  const name = tempName.replace(/['"]+/g,'');
   const picture = localStorage.getItem('picture')
   const email = localStorage.getItem('email')
   console.log(name)

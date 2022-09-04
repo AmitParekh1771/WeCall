@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
+import image from './images/7070629_3293465.jpg'
 import './login.css'
 
 const Login = () => {
@@ -35,13 +36,35 @@ const Login = () => {
       theme: 'outline',
       size: 'large',
     })
-
+    console.log(google.accounts.id);
     google.accounts.id.prompt()
   }, [])
 
   return (
     <div className='App'>
-      <div id='signInDiv'></div>
+      <div class="login-section">
+      <div class="outer-container-1360 login-block">
+        <img
+          src={image}
+          loading="lazy"
+          width="600"
+          height="600"
+          alt="login-illustration"
+          class="login-image"
+        />
+        <div class="login-box">
+          <div class="large-title-text">Hey There!</div>
+          <div class="descriptive-text">
+            Can't remember username and password!
+          </div>
+          <div class="descriptive-text">
+            No need. Authenticate yourself in one tap.
+          </div>
+            <div className='flexy'><div id='signInDiv' className='login-btn medium-title-text'></div></div>
+        </div>
+      </div>
+      </div>
+      
       {Object.keys(user).length !== 0 && (
           <div>
             <img src={user.picture} alt='dp' />
