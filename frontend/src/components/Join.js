@@ -13,7 +13,7 @@ const Join = () => {
   function handleNewMeetButton() {
     const uniqueId = uuidv4()
     console.log(uniqueId)
-    navigate(`/room/${uniqueId}`)
+    navigate(`/room/${uniqueId}?attribute=host`)
   }
   let name,picture,email
   if(localStorage.getItem('name') != null)
