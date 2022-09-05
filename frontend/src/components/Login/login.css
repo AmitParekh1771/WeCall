@@ -1,0 +1,119 @@
+.login-section {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 65vh;
+    padding: 50px 5%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.outer-container-1360 {
+    width: 50%;
+    max-width: 1360px;
+    margin: auto;
+    height: 100%;
+}
+
+.outer-container-1360.login-block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+    border-radius: 5px;
+    background-color: #01499d;
+    box-shadow: 0 50px 100px -40px rgba(0, 0, 0, 0.5);
+}
+
+.login-image {
+    width: 50%;
+    min-height: 100%;
+    border-radius: 5px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.large-title-text {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.login-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 20px;
+    padding: 8px 20px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #4285f4;
+    -webkit-transition: all 200ms cubic-bezier(.215, .61, .355, 1);
+    transition: all 200ms cubic-bezier(.215, .61, .355, 1);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    width: auto ;
+}
+
+.login-btn:hover {
+    background-color: #376fcc;
+}
+
+@media screen and (max-width: 991px) {
+    .login-box {
+        margin: 30px 40px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .login-image {
+        width: 100%;
+        height: 50%;
+        max-height: 600px;
+    }
+    
+    .outer-container-1360.login-block {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .login-box {
+        max-width: 100%;
+        margin: 10px 0px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .login-box {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+}
